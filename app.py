@@ -2,9 +2,9 @@ from flask import Flask,request,render_template
 import google.generativeai as palm
 import replicate
 import os
-from dotenv import load_dotenv
+# from dotenv import load_dotenv
 
-load_dotenv()
+# load_dotenv()
 
 REPLICATE_API_TOKEN = os.environ.get("REPLICATE_API_TOKEN")
 # print(REPLICATE_API_TOKEN)
