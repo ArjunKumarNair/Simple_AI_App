@@ -2,9 +2,20 @@ from flask import Flask,request,render_template
 import google.generativeai as palm
 import replicate
 import os
+from dotenv import load_dotenv
 
-os.environ["REPLICATE_API_TOKEN"] = "r8_CtbcXs9Mk9uxXX8yvWuOnWiLJQ9zHFW1Kcbjf"
-palm.configure(api_key="AIzaSyATy8F6EfovHdxIN83uA09dKmeyHVHSZt4")
+load_dotenv()
+
+REPLICATE_API_TOKEN = os.environ.get("REPLICATE_API_TOKEN")
+# print(REPLICATE_API_TOKEN)
+
+GOOGLE_API_KEY = os.environ.get("GOOGLE_API_KEY")
+
+print(GOOGLE_API_KEY)
+
+
+# os.environ["REPLICATE_API_TOKEN"] = REPLICATE_API_TOKEN
+palm.configure(api_key=GOOGLE_API_KEY)
 model = {
     "model": "models/chat-bison-001",
 }
